@@ -1,16 +1,126 @@
-[gd_scene load_steps=3 format=3 uid="uid://cvlr501iv7to"]
+[gd_scene load_steps=10 format=3 uid="uid://cvlr501iv7to"]
 
-[sub_resource type="Animation" id="Animation_4s15u"]
-resource_name = "new_animation"
+[ext_resource type="Texture2D" uid="uid://dj4k6rju7jvsx" path="res://assets/cutscenes/black bg.png" id="1_hw6hs"]
+[ext_resource type="Texture2D" uid="uid://oa0s38j7ibe8" path="res://assets/cutscenes/op_scene1.png" id="1_iwk2l"]
+[ext_resource type="Script" path="res://scripts/cutscene1.gd" id="1_tvgb8"]
+[ext_resource type="FontFile" uid="uid://0ggbptpehuck" path="res://assets/fonts/PixelOperator8.ttf" id="3_7l2qf"]
+[ext_resource type="FontFile" uid="uid://dxipon7dcuy5f" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="4_7v0ol"]
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_xrys4"]
+[sub_resource type="Animation" id="Animation_gqo2p"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../RichTextLabel1:visible_ratio")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+
+[sub_resource type="Animation" id="Animation_dp17x"]
+resource_name = "opening"
+step = 0.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.961),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_cttpf"]
+resource_name = "text"
+length = 10.0
+step = 0.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../RichTextLabel1:visible_ratio")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.4539, 4.95, 9.95),
+"transitions": PackedFloat32Array(1, 1, 1, 0.933032),
+"update": 0,
+"values": [0.0, 0.1, 0.507, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_b8hy1"]
 _data = {
-"new_animation": SubResource("Animation_4s15u")
+"RESET": SubResource("Animation_gqo2p"),
+"opening": SubResource("Animation_dp17x"),
+"text": SubResource("Animation_cttpf")
 }
 
 [node name="Node" type="Node"]
+script = ExtResource("1_tvgb8")
+
+[node name="blackbg" type="Sprite2D" parent="."]
+position = Vector2(575.85, 326.1)
+scale = Vector2(0.989896, 1.00895)
+texture = ExtResource("1_hw6hs")
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = -1
+anchor_left = 0.578
+anchor_top = 0.854
+anchor_right = 0.943
+anchor_bottom = 0.972
+offset_left = 11.144
+offset_top = 14.608
+offset_right = 147.344
+offset_bottom = -11.856
+theme_override_fonts/font = ExtResource("4_7v0ol")
+theme_override_font_sizes/font_size = 19
+text = "Press \"X\" to continue"
+
+[node name="RichTextLabel1" type="RichTextLabel" parent="."]
+anchors_preset = -1
+anchor_left = 0.557
+anchor_top = 0.099
+anchor_right = 0.937
+anchor_bottom = 0.745
+offset_left = 11.3359
+offset_top = 29.848
+offset_right = -15.4241
+offset_bottom = 30.24
+theme_override_constants/line_separation = 6
+theme_override_fonts/normal_font = ExtResource("3_7l2qf")
+theme_override_fonts/bold_font = ExtResource("4_7v0ol")
+theme_override_font_sizes/normal_font_size = 24
+
+[node name="scene1" type="Sprite2D" parent="."]
+position = Vector2(336, 318)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("1_iwk2l")
+
+[node name="scene2" type="Sprite2D" parent="."]
+position = Vector2(336, 318)
+scale = Vector2(0.7, 0.7)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../scene1")
 libraries = {
-"": SubResource("AnimationLibrary_xrys4")
+"": SubResource("AnimationLibrary_b8hy1")
 }
