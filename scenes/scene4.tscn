@@ -1,0 +1,65 @@
+[gd_scene load_steps=6 format=3 uid="uid://3fk77bhvkl12"]
+
+[ext_resource type="Script" path="res://scripts/cutscene4.gd" id="1_74410"]
+[ext_resource type="FontFile" uid="uid://dxipon7dcuy5f" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_a2hxf"]
+
+[sub_resource type="Animation" id="Animation_l7jrm"]
+resource_name = "text"
+length = 8.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../RichTextLabel:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.133333, 7.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_1mutp"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../RichTextLabel:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_orlwe"]
+_data = {
+"RESET": SubResource("Animation_1mutp"),
+"text": SubResource("Animation_l7jrm")
+}
+
+[node name="Node" type="Node"]
+script = ExtResource("1_74410")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../ColorRect")
+libraries = {
+"": SubResource("AnimationLibrary_orlwe")
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+texture_filter = 1
+offset_left = 93.0
+offset_top = 83.0
+offset_right = 1063.0
+offset_bottom = 549.0
+theme_override_fonts/normal_font = ExtResource("2_a2hxf")
+theme_override_font_sizes/normal_font_size = 40
+bbcode_enabled = true

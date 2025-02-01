@@ -1,16 +1,57 @@
-[gd_scene load_steps=6 format=3 uid="uid://kkwo8kh220fs"]
+[gd_scene load_steps=11 format=3 uid="uid://kkwo8kh220fs"]
 
 [ext_resource type="Texture2D" uid="uid://bce23i74dbj4g" path="res://assets/visual/panel.png" id="1_6non0"]
+[ext_resource type="Script" path="res://scripts/tile_puzzle_side.gd" id="1_jqnnd"]
 [ext_resource type="Script" path="res://scripts/tile_puzzle.gd" id="1_pcv0w"]
 [ext_resource type="Texture2D" uid="uid://dhe50yadna7mo" path="res://assets/visual/tiles.png" id="2_g6md6"]
 [ext_resource type="Texture2D" uid="uid://dj4k6rju7jvsx" path="res://assets/cutscenes/black bg.png" id="3_k64os"]
+[ext_resource type="FontFile" uid="uid://0ggbptpehuck" path="res://assets/fonts/PixelOperator8.ttf" id="5_g1oka"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h6hbr"]
 size = Vector2(383.333, 381.333)
 
+[sub_resource type="Animation" id="Animation_tfbq1"]
+resource_name = "glow"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect2:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.2, 0.9, 1.63333, 2.26667, 3.2, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0, 1, 1, 1), Color(1, 1, 1, 1), Color(0, 1, 1, 1), Color(0.976471, 1, 1, 1), Color(0, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_sltaw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect2:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mdwrg"]
+_data = {
+"RESET": SubResource("Animation_sltaw"),
+"glow": SubResource("Animation_tfbq1")
+}
+
 [node name="Node" type="Node"]
+script = ExtResource("1_jqnnd")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
 position = Vector2(576, 321)
 scale = Vector2(2, 2)
 texture = ExtResource("1_6non0")
@@ -91,4 +132,41 @@ position = Vector2(192, 192)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("3_k64os")
 region_enabled = true
-region_rect = Rect2(0, 0, 128, 128)
+region_rect = Rect2(256, 256, 128, 128)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_mdwrg")
+}
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(143, 165)
+scale = Vector2(0.546875, 0.6875)
+texture = ExtResource("2_g6md6")
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+offset_left = 48.0
+offset_top = 344.0
+offset_right = 232.0
+offset_bottom = 608.0
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = 56.0
+offset_top = 352.0
+offset_right = 224.0
+offset_bottom = 600.0
+color = Color(0, 0, 0, 1)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+texture_filter = 1
+offset_left = 64.0
+offset_top = 360.0
+offset_right = 216.0
+offset_bottom = 592.0
+theme_override_colors/default_color = Color(0, 1, 0, 1)
+theme_override_constants/line_separation = 2
+theme_override_fonts/normal_font = ExtResource("5_g1oka")
+theme_override_font_sizes/normal_font_size = 13
+text = "Help Axton repair the control panel by rearranging the navigation map to its correct order. Use your mouse to click on a tile to move it to a empty slot next to it "
+
+[connection signal="win" from="main" to="." method="_on_main_win"]

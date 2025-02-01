@@ -1,8 +1,10 @@
 extends Node
 
+signal cutscene1_over
+
 var opening = "Axton, a skilled engineer and space explorer, embarked on a journey to explore the distant planet system of Xylonia. His mission was to gather and study data on the system for potential for future habitation."
 var theCrash = "En route to Xylonia, Axton's spacecraft encountered unexpected asteroid debris. Despite his best efforts, the ship suffered catastrophic damage and crash-landed on the uncharted planet"
-var objective = "Axton survived the crash but found himself stranded on a hostile alien world. His ship lies in ruins, its communication equipment destroyed. With limited supplies and no way to call for help, Axton must rely on his ingenuity and resourcefulness to survive."
+var objective = "[color=red]48 hrs since the crash[/color]\n\nAxton survived the crash but found himself stranded on a hostile alien world. His ship lies in ruins, its communication equipment destroyed. With limited supplies and no way to call for help, Axton must rely on his ingenuity and resourcefulness to survive."
 
 func scene():
 	
@@ -39,7 +41,8 @@ func scene():
 	await get_tree().create_timer(1).timeout
 	$AnimationPlayer.play("text2")
 	await get_tree().create_timer(15).timeout
-
+	
+	emit_signal("cutscene1_over")
 func _ready():
 	scene()
 		

@@ -1,0 +1,224 @@
+[gd_scene load_steps=10 format=3 uid="uid://pje0j6d7m764"]
+
+[ext_resource type="Script" path="res://scripts/cutscene3.gd" id="1_vqda1"]
+[ext_resource type="FontFile" uid="uid://dxipon7dcuy5f" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_u6blw"]
+[ext_resource type="Texture2D" uid="uid://bce23i74dbj4g" path="res://assets/visual/panel.png" id="3_ab5nb"]
+
+[sub_resource type="Animation" id="Animation_b50m3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RichTextLabel:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("RichTextLabel:theme_override_font_sizes/normal_font_size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [26]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D/ColorRect:color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 0, 0, 0.352941)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D/Label:theme_override_colors/font_color")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 0, 0, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("RichTextLabel2:visible_ratio")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+
+[sub_resource type="Animation" id="Animation_r50dj"]
+resource_name = "text"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RichTextLabel:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_08tre"]
+resource_name = "but"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RichTextLabel:theme_override_font_sizes/normal_font_size")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.133333, 0.966667, 1.93333, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [1, 60, 150, 300]
+}
+
+[sub_resource type="Animation" id="Animation_cxlw7"]
+resource_name = "warning"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0333333, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 0, 0, 0.352941), Color(1, 0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D/Label:theme_override_colors/font_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.1, 0.933333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 1, 0, 1), Color(1, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_1c7tb"]
+resource_name = "text2"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RichTextLabel2:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 10.0667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lwpln"]
+_data = {
+"RESET": SubResource("Animation_b50m3"),
+"but": SubResource("Animation_08tre"),
+"text": SubResource("Animation_r50dj"),
+"text2": SubResource("Animation_1c7tb"),
+"warning": SubResource("Animation_cxlw7")
+}
+
+[node name="Node" type="Node"]
+script = ExtResource("1_vqda1")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_lwpln")
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 104.0
+offset_top = 84.0
+offset_right = -119.0
+offset_bottom = -99.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/line_separation = 8
+theme_override_fonts/normal_font = ExtResource("2_u6blw")
+theme_override_font_sizes/normal_font_size = 26
+bbcode_enabled = true
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+offset_left = 104.0
+offset_top = 84.0
+offset_right = 1033.0
+offset_bottom = 549.0
+theme_override_constants/line_separation = 8
+theme_override_fonts/normal_font = ExtResource("2_u6blw")
+theme_override_font_sizes/normal_font_size = 30
+text = " "
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(576.5, 324.5)
+scale = Vector2(1.99826, 1.99691)
+texture = ExtResource("3_ab5nb")
+
+[node name="ColorRect2" type="ColorRect" parent="Sprite2D"]
+offset_left = -145.0
+offset_top = -145.0
+offset_right = 144.0
+offset_bottom = 144.0
+color = Color(0, 0.129412, 0, 1)
+
+[node name="Label" type="Label" parent="Sprite2D"]
+offset_left = -101.0
+offset_top = -120.0
+offset_right = 112.0
+offset_bottom = 112.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_u6blw")
+theme_override_font_sizes/font_size = 27
+text = "WARNING!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="Sprite2D"]
+offset_left = -288.0
+offset_top = -162.0
+offset_right = 288.0
+offset_bottom = 162.0
+color = Color(1, 0, 0, 0.352941)

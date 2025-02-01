@@ -1,11 +1,11 @@
 [gd_scene load_steps=13 format=3 uid="uid://cvlr501iv7to"]
 
-[ext_resource type="Texture2D" uid="uid://dj4k6rju7jvsx" path="res://assets/cutscenes/black bg.png" id="1_hw6hs"]
-[ext_resource type="Texture2D" uid="uid://oa0s38j7ibe8" path="res://assets/cutscenes/op_scene1.png" id="1_iwk2l"]
-[ext_resource type="Script" path="res://scripts/cutscene1.gd" id="1_tvgb8"]
-[ext_resource type="FontFile" uid="uid://0ggbptpehuck" path="res://assets/fonts/PixelOperator8.ttf" id="3_7l2qf"]
-[ext_resource type="FontFile" uid="uid://dxipon7dcuy5f" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="4_7v0ol"]
-[ext_resource type="Texture2D" uid="uid://dmmtn18nn2jv1" path="res://assets/cutscenes/op_scene2.png" id="7_w6dxn"]
+[ext_resource type="Script" path="res://scripts/cutscene1.gd" id="1_aw0v7"]
+[ext_resource type="Texture2D" uid="uid://dj4k6rju7jvsx" path="res://assets/cutscenes/black bg.png" id="2_fat6i"]
+[ext_resource type="FontFile" uid="uid://0ggbptpehuck" path="res://assets/fonts/PixelOperator8.ttf" id="3_243tl"]
+[ext_resource type="Texture2D" uid="uid://oa0s38j7ibe8" path="res://assets/cutscenes/op_scene1.png" id="4_fedai"]
+[ext_resource type="Texture2D" uid="uid://dmmtn18nn2jv1" path="res://assets/cutscenes/op_scene2.png" id="5_wcuws"]
+[ext_resource type="FontFile" uid="uid://dxipon7dcuy5f" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="6_8tft2"]
 
 [sub_resource type="Animation" id="Animation_gqo2p"]
 length = 0.001
@@ -132,14 +132,15 @@ _data = {
 }
 
 [node name="Node" type="Node"]
-script = ExtResource("1_tvgb8")
+script = ExtResource("1_aw0v7")
 
 [node name="blackbg" type="Sprite2D" parent="."]
 position = Vector2(575.85, 326.1)
 scale = Vector2(0.989896, 1.00895)
-texture = ExtResource("1_hw6hs")
+texture = ExtResource("2_fat6i")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
+texture_filter = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -149,13 +150,14 @@ offset_right = -59.0
 offset_bottom = -84.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/normal_font = ExtResource("3_7l2qf")
+theme_override_constants/line_separation = 8
+theme_override_fonts/normal_font = ExtResource("3_243tl")
 theme_override_font_sizes/normal_font_size = 24
 
 [node name="scene1" type="Sprite2D" parent="."]
 position = Vector2(336, 318)
 scale = Vector2(0.7, 0.7)
-texture = ExtResource("1_iwk2l")
+texture = ExtResource("4_fedai")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../scene1")
@@ -166,14 +168,15 @@ libraries = {
 [node name="scene2" type="Sprite2D" parent="."]
 position = Vector2(338.5, 319)
 scale = Vector2(0.6875, 0.677778)
-texture = ExtResource("7_w6dxn")
+texture = ExtResource("5_wcuws")
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="."]
+texture_filter = 1
 offset_left = 91.0
-offset_top = 156.0
-offset_right = 1045.0
-offset_bottom = 571.0
+offset_top = 105.0
+offset_right = 1054.0
+offset_bottom = 526.0
 theme_override_constants/line_separation = 8
-theme_override_fonts/normal_font = ExtResource("4_7v0ol")
+theme_override_fonts/normal_font = ExtResource("6_8tft2")
 theme_override_font_sizes/normal_font_size = 30
 bbcode_enabled = true

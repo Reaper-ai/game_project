@@ -1,5 +1,6 @@
 extends Area2D
 
+signal win
 var tiles = []  # 3x3 array for tiles
 var solved = []  # 3x3 solved state
 var mouse = false
@@ -18,10 +19,8 @@ func start_game():
 	]
 	# Duplicate the initial state for solved configuration
 	solved = tiles.duplicate(true)
-	
-	print(solved)
 	# Shuffle the tiles to start the game
-	shuffle_tiles()
+	#shuffle_tiles()
 	
 # Function to shuffle the tiles using Fisher-Yates shuffle
 func shuffle_tiles():
@@ -79,19 +78,17 @@ func _process(delta):
 		var mouse_position = get_global_mouse_position()
 
 		var pos = mouse_position - offset
-		print(pos)
+		
 		var rows = int((mouse_position.y - offset.y ) / 192)
 		var cols = int((mouse_position.x - offset.x ) / 192)
-		print(rows,cols)
 		check_neighbours(rows, cols)
 
 		if check_win():
-			print("You win!")
+			emit_signal("win")
 
 # Check if the tiles are in the solved configuration
 func check_win() -> bool:
-	print(tiles)
-	print(solved)
+
 	for i in range(3):
 		for j in range(3):
 			if tiles[i][j] != solved[i][j]:
