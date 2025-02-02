@@ -41,7 +41,7 @@ The Theme is incorporated through the story i.e. to repair Axton's broken rocket
 - **Story and Script**: Gaurav Upreti, Lalruatmawia Hmar
 - **Art and Assets**: Lalruatmawia Hmar
 - **Sound and Music**: Lalruatmawia Hmar
-All external assets used come under _"royalty free non-copyrighted"_ category  
+- All external assets used come under _"royalty free non-copyrighted"_ category  
 ## License
 
 This game is released under the MIT License. See LICENSE for details.
