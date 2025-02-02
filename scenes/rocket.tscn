@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://c18iiq7g11hgt"]
+
+[ext_resource type="Script" path="res://scripts/game/rocket1.gd" id="1_02ih1"]
+[ext_resource type="Texture2D" uid="uid://chnuyi20qcya8" path="res://assets/visual/rocket.png" id="1_32xfn"]
+[ext_resource type="PackedScene" uid="uid://dgr7u54sf4psy" path="res://scenes/Bullet.tscn" id="2_quhcg"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_opctl"]
+radius = 18.0
+height = 104.0
+
+[node name="rocket" type="CharacterBody2D" groups=["rocket"]]
+texture_filter = 1
+script = ExtResource("1_02ih1")
+bullet_scene = ExtResource("2_quhcg")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(6.25, 18.5)
+scale = Vector2(1.01172, 1.03906)
+texture = ExtResource("1_32xfn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(9, 8)
+shape = SubResource("CapsuleShape2D_opctl")

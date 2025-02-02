@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://b7iu0xgv8jg3n"]
+
+[ext_resource type="Script" path="res://scripts/game/background.gd" id="1_pgc58"]
+[ext_resource type="Texture2D" uid="uid://bkk57e66pjkpx" path="res://assets/visual/Space Background.png" id="2_78dep"]
+
+[node name="ParallaxBackground" type="ParallaxBackground"]
+script = ExtResource("1_pgc58")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+motion_mirroring = Vector2(0, 200)
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxLayer"]
+offset_right = 1146.0
+offset_bottom = 645.0
+texture = ExtResource("2_78dep")
+stretch_mode = 1

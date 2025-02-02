@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://dh46fvp1e8hbk"]
+
+[ext_resource type="Script" path="res://scripts/game/asteroid.gd" id="1_82os1"]
+[ext_resource type="Texture2D" uid="uid://exodxwt0khir" path="res://assets/visual/Asteroid 01 - Explode.png" id="1_rt1lj"]
+[ext_resource type="AudioStream" uid="uid://bk5yf2dcxvira" path="res://assets/sounds/asteroid.wav" id="3_0sn7o"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1n1b8"]
+radius = 25.0799
+
+[node name="asteroid" type="Area2D" groups=["asteroid"]]
+script = ExtResource("1_82os1")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(6, 6)
+scale = Vector2(1.24, 1.35294)
+texture = ExtResource("1_rt1lj")
+region_enabled = true
+region_rect = Rect2(119, 31.1156, 50, 34.8844)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(6, 5)
+shape = SubResource("CircleShape2D_1n1b8")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_0sn7o")
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
