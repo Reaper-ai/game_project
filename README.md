@@ -27,7 +27,7 @@ The cosmos, however, has one final trial. A maze of magnetic asteroids threatens
 
 ## Installation
 
-1. Download the game files from [insert link].
+1. Download the game files from [here](./executables).
 2. Extract the files to a desired location on your computer.
 3. Run the `AxtonsFable.exe` file to start the game.
 
