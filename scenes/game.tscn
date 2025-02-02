@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://lhgyt33kcuea"]
+[gd_scene load_steps=48 format=3 uid="uid://lhgyt33kcuea"]
 
 [ext_resource type="Texture2D" uid="uid://bod27661rbhor" path="res://assets/visual/Standards.png" id="1_lu617"]
 [ext_resource type="Texture2D" uid="uid://cilgp0akkwvn6" path="res://assets/visual/Tileset Terrain (16x16).png" id="2_fg56u"]
@@ -21,7 +21,11 @@
 [ext_resource type="AudioStream" uid="uid://dadtgrw7dukbb" path="res://assets/sounds/jump.wav" id="21_bb1ce"]
 [ext_resource type="AudioStream" uid="uid://d0bo6xj0bpeje" path="res://assets/sounds/coin.wav" id="22_d6nwd"]
 [ext_resource type="PackedScene" uid="uid://emr5j61l4jty" path="res://scenes/finish.tscn" id="22_gorhq"]
+[ext_resource type="PackedScene" uid="uid://61ukkj4mh4dm" path="res://check.tscn" id="23_75e8k"]
 [ext_resource type="PackedScene" uid="uid://beb7u07vx12uv" path="res://scenes/counter.tscn" id="23_etvrm"]
+[ext_resource type="Script" path="res://scripts/game/check1.gd" id="24_5o0i7"]
+[ext_resource type="Script" path="res://scripts/game/check2.gd" id="25_mq0c7"]
+[ext_resource type="Script" path="res://scripts/game/check3.gd" id="26_8oj3r"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ujq1j"]
 texture = ExtResource("1_lu617")
@@ -889,7 +893,7 @@ layer_1/tile_data = PackedInt32Array(131073, 524289, 3, 131075, 196609, 3, 13107
 
 [node name="Player" parent="." instance=ExtResource("5_gmmc2")]
 z_index = 2
-position = Vector2(60, -34)
+position = Vector2(63, -31)
 collision_layer = 2
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
@@ -1060,10 +1064,10 @@ text = "Using your [b]A/S or arrow keys[/b]  and the [b]W or spacebar[/b],
 help him navigate the treachorous terrain of this desolated planet and retrieve the broken parts of his rocket."
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="."]
-offset_left = 79.0
-offset_top = -357.0
-offset_right = 202.0
-offset_bottom = -325.0
+offset_left = 78.0
+offset_top = -370.0
+offset_right = 259.0
+offset_bottom = -334.0
 theme_override_constants/line_separation = 2
 theme_override_fonts/normal_font = ExtResource("20_0m52k")
 theme_override_fonts/bold_font = ExtResource("21_103ah")
@@ -1071,7 +1075,8 @@ theme_override_font_sizes/mono_font_size = 2
 theme_override_font_sizes/normal_font_size = 9
 theme_override_font_sizes/bold_font_size = 5
 bbcode_enabled = true
-text = "Hey, this teleports you! "
+text = "Hey, this teleports you! 
+But remember to go slowly into it.."
 
 [node name="RichTextLabel3" type="RichTextLabel" parent="."]
 offset_left = 675.0
@@ -1115,3 +1120,15 @@ stream = ExtResource("21_bb1ce")
 [node name="collected" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(60, -49)
 stream = ExtResource("22_d6nwd")
+
+[node name="check1" parent="." instance=ExtResource("23_75e8k")]
+position = Vector2(663, -195)
+script = ExtResource("24_5o0i7")
+
+[node name="check2" parent="." instance=ExtResource("23_75e8k")]
+position = Vector2(968, -244)
+script = ExtResource("25_mq0c7")
+
+[node name="check3" parent="." instance=ExtResource("23_75e8k")]
+position = Vector2(1070, -437)
+script = ExtResource("26_8oj3r")
