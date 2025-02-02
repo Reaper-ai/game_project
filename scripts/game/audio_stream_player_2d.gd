@@ -3,12 +3,15 @@ extends AudioStreamPlayer2D
 const level_music1 = preload("res://assets/sounds/dramatic.mp3")
 const level_music2 = preload("res://assets/sounds/scary.mp3")
 const level_music3 = preload("res://assets/sounds/ending.mp3")
+
 func _play_music(music,volume = 0.0):
 	if stream == music:
 		return
 	
 	stream = music
 	volume_db = volume
+	
+	stream.loop = true
 	play()
 
 func _stop_music():
