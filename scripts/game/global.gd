@@ -7,3 +7,4 @@ var SPEED = 120.0
 var coins =0
 var last_coin_x = 0
 var last_coin_y = 0
+var checkpoint = 0

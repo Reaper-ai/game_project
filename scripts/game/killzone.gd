@@ -4,20 +4,19 @@ extends Area2D
 
 func _on_body_entered(body: Node2D) -> void:
 	Hurt.play_music()
-	if get_parent().name.begins_with("icicle"):
 			
-		if Global.coins == 0:
-			body.position.x = 46
-			body.position.y = -34
-		else:
-			body.position.x = Global.last_coin_x
-			body.position.y = Global.last_coin_y
+	if Global.checkpoint==0:
+		body.position.x = 46
+		body.position.y = -34
 	else:
-		body.get_node("CollisionShape2D").queue_free()
-		Global.coins = 0
-		Global.last_coin_x = 0
-		Global.last_coin_y = 0
-		timer.start()
+		if Global.checkpoint == 1:
+			body.position= Vector2(663, -195)
+
+		elif Global.checkpoint == 2:
+			body.position = Vector2(968,-244)
+
+		else:
+			body.position = Vector2(1070,-437)
 		
 func _on_timer_timeout() -> void:
 	
