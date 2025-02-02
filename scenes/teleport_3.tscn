@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dol2yalivrwxo"]
 
-[ext_resource type="Script" path="res://scripts/teleport_3.gd" id="1_8xldb"]
+[ext_resource type="Script" path="res://scripts/game/teleport_3.gd" id="1_8xldb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i65sx"]
 size = Vector2(13, 18)

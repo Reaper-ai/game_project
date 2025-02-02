@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://diamok2esidub"]
 
 [ext_resource type="Texture2D" uid="uid://g70pesyb30h4" path="res://assets/visual/coin.png" id="1_abqbs"]
-[ext_resource type="Script" path="res://scripts/coin.gd" id="2_qabjt"]
+[ext_resource type="Script" path="res://scripts/game/coin.gd" id="2_qabjt"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kniua"]
 atlas = ExtResource("1_abqbs")

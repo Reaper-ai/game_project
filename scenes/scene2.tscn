@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://mj1d8hn50rv8"]
+[gd_scene load_steps=7 format=3 uid="uid://mj1d8hn50rv8"]
 
-[ext_resource type="Script" path="res://scripts/cutscene2.gd" id="1_3lobh"]
+[ext_resource type="Script" path="res://scripts/cutscenes/cutscene2.gd" id="1_3lobh"]
+[ext_resource type="Script" path="res://scripts/managers/manager3.gd" id="1_oypnq"]
 [ext_resource type="FontFile" uid="uid://dxipon7dcuy5f" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_8f2jv"]
 
 [sub_resource type="Animation" id="Animation_b50m3"]
@@ -40,20 +41,23 @@ _data = {
 "text": SubResource("Animation_r50dj")
 }
 
-[node name="Node" type="Node"]
+[node name="manager" type="Node"]
+script = ExtResource("1_oypnq")
+
+[node name="CUTSCENE2" type="Node" parent="."]
 script = ExtResource("1_3lobh")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="CUTSCENE2"]
 offset_right = 1152.0
 offset_bottom = 648.0
 color = Color(0, 0, 0, 1)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CUTSCENE2"]
 libraries = {
 "": SubResource("AnimationLibrary_lwpln")
 }
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
+[node name="RichTextLabel" type="RichTextLabel" parent="CUTSCENE2"]
 texture_filter = 1
 anchors_preset = 15
 anchor_right = 1.0

@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://cq8vy4sqyrabm"]
 
-[ext_resource type="Texture2D" uid="uid://dekk54bkd83y2" path="res://assets/cyan_slime.png" id="1_3367e"]
-[ext_resource type="Script" path="res://scripts/enemy.gd" id="1_r3x26"]
+[ext_resource type="Texture2D" uid="uid://dekk54bkd83y2" path="res://assets/visual/cyan_slime.png" id="1_3367e"]
+[ext_resource type="Script" path="res://scripts/game/enemy.gd" id="1_r3x26"]
 [ext_resource type="PackedScene" uid="uid://bspg7bvdh56lt" path="res://scenes/killzone.tscn" id="2_g45o4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dkinf"]

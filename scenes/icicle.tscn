@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://dhry8y2mkpt3q"]
 
 [ext_resource type="PackedScene" uid="uid://bspg7bvdh56lt" path="res://scenes/killzone.tscn" id="1_bs5qk"]
-[ext_resource type="Texture2D" uid="uid://bf0en57pxv38l" path="res://assets/icerocks_pixel.png" id="2_nlvuw"]
-[ext_resource type="Script" path="res://scripts/randomsprite.gd" id="3_nhi2h"]
+[ext_resource type="Texture2D" uid="uid://bf0en57pxv38l" path="res://assets/visual/icerocks_pixel.png" id="2_nlvuw"]
+[ext_resource type="Script" path="res://scripts/game/randomsprite.gd" id="3_nhi2h"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y85te"]
 size = Vector2(13, 13)

@@ -6,8 +6,7 @@ var opening = "Axton, a skilled engineer and space explorer, embarked on a journ
 var theCrash = "En route to Xylonia, Axton's spacecraft encountered unexpected asteroid debris. Despite his best efforts, the ship suffered catastrophic damage and crash-landed on the uncharted planet"
 var objective = "[color=red]48 hrs since the crash[/color]\n\nAxton survived the crash but found himself stranded on a hostile alien world. His ship lies in ruins, its communication equipment destroyed. With limited supplies and no way to call for help, Axton must rely on his ingenuity and resourcefulness to survive."
 
-func scene():
-	
+func play():
 	# opening scene 
 	$RichTextLabel2.hide()
 	$scene2.hide()
@@ -40,9 +39,10 @@ func scene():
 	$RichTextLabel2.text = "[center]" + objective + "[center]"
 	await get_tree().create_timer(1).timeout
 	$AnimationPlayer.play("text2")
-	await get_tree().create_timer(15).timeout
+	await get_tree().create_timer(10).timeout
 	
 	emit_signal("cutscene1_over")
+
 func _ready():
-	scene()
-		
+	play()
+	

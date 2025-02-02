@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://kkwo8kh220fs"]
+[gd_scene load_steps=12 format=3 uid="uid://kkwo8kh220fs"]
 
 [ext_resource type="Texture2D" uid="uid://bce23i74dbj4g" path="res://assets/visual/panel.png" id="1_6non0"]
-[ext_resource type="Script" path="res://scripts/tile_puzzle_side.gd" id="1_jqnnd"]
-[ext_resource type="Script" path="res://scripts/tile_puzzle.gd" id="1_pcv0w"]
+[ext_resource type="Script" path="res://scripts/game/tile_puzzle_side.gd" id="1_jqnnd"]
+[ext_resource type="Script" path="res://scripts/game/tile_puzzle.gd" id="1_pcv0w"]
+[ext_resource type="Script" path="res://scripts/managers/manager4.gd" id="1_xfwg6"]
 [ext_resource type="Texture2D" uid="uid://dhe50yadna7mo" path="res://assets/visual/tiles.png" id="2_g6md6"]
 [ext_resource type="Texture2D" uid="uid://dj4k6rju7jvsx" path="res://assets/cutscenes/black bg.png" id="3_k64os"]
 [ext_resource type="FontFile" uid="uid://0ggbptpehuck" path="res://assets/fonts/PixelOperator8.ttf" id="5_g1oka"]
@@ -47,24 +48,27 @@ _data = {
 "glow": SubResource("Animation_tfbq1")
 }
 
-[node name="Node" type="Node"]
+[node name="manager" type="Node"]
+script = ExtResource("1_xfwg6")
+
+[node name="Game" type="Node" parent="."]
 script = ExtResource("1_jqnnd")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="Game"]
 texture_filter = 1
 position = Vector2(576, 321)
 scale = Vector2(2, 2)
 texture = ExtResource("1_6non0")
 
-[node name="main" type="Area2D" parent="."]
+[node name="main" type="Area2D" parent="Game"]
 position = Vector2(576, 320)
 script = ExtResource("1_pcv0w")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="main"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Game/main"]
 scale = Vector2(1.5, 1.5)
 shape = SubResource("RectangleShape2D_h6hbr")
 
-[node name="Tile1" type="Sprite2D" parent="main"]
+[node name="Tile1" type="Sprite2D" parent="Game/main"]
 texture_filter = 1
 position = Vector2(-192, -192)
 scale = Vector2(1.5, 1.5)
@@ -72,7 +76,7 @@ texture = ExtResource("2_g6md6")
 region_enabled = true
 region_rect = Rect2(0, 0, 128, 128)
 
-[node name="Tile2" type="Sprite2D" parent="main"]
+[node name="Tile2" type="Sprite2D" parent="Game/main"]
 texture_filter = 1
 position = Vector2(0, -192)
 scale = Vector2(1.5, 1.5)
@@ -80,7 +84,7 @@ texture = ExtResource("2_g6md6")
 region_enabled = true
 region_rect = Rect2(128, 0, 128, 128)
 
-[node name="Tile3" type="Sprite2D" parent="main"]
+[node name="Tile3" type="Sprite2D" parent="Game/main"]
 texture_filter = 1
 position = Vector2(192, -192)
 scale = Vector2(1.5, 1.5)
@@ -88,7 +92,7 @@ texture = ExtResource("2_g6md6")
 region_enabled = true
 region_rect = Rect2(256, 0, 128, 128)
 
-[node name="Tile4" type="Sprite2D" parent="main"]
+[node name="Tile4" type="Sprite2D" parent="Game/main"]
 texture_filter = 1
 position = Vector2(-192, 0)
 scale = Vector2(1.5, 1.5)
@@ -96,14 +100,14 @@ texture = ExtResource("2_g6md6")
 region_enabled = true
 region_rect = Rect2(0, 128, 128, 128)
 
-[node name="Tile5" type="Sprite2D" parent="main"]
+[node name="Tile5" type="Sprite2D" parent="Game/main"]
 texture_filter = 1
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("2_g6md6")
 region_enabled = true
 region_rect = Rect2(128, 128, 128, 128)
 
-[node name="Tile6" type="Sprite2D" parent="main"]
+[node name="Tile6" type="Sprite2D" parent="Game/main"]
 texture_filter = 1
 position = Vector2(192, 0)
 scale = Vector2(1.5, 1.5)
@@ -111,7 +115,7 @@ texture = ExtResource("2_g6md6")
 region_enabled = true
 region_rect = Rect2(256, 128, 128, 128)
 
-[node name="Tile7" type="Sprite2D" parent="main"]
+[node name="Tile7" type="Sprite2D" parent="Game/main"]
 texture_filter = 1
 position = Vector2(-192, 192)
 scale = Vector2(1.5, 1.5)
@@ -119,7 +123,7 @@ texture = ExtResource("2_g6md6")
 region_enabled = true
 region_rect = Rect2(0, 256, 128, 128)
 
-[node name="Tile8" type="Sprite2D" parent="main"]
+[node name="Tile8" type="Sprite2D" parent="Game/main"]
 texture_filter = 1
 position = Vector2(0, 192)
 scale = Vector2(1.5, 1.5)
@@ -127,37 +131,37 @@ texture = ExtResource("2_g6md6")
 region_enabled = true
 region_rect = Rect2(128, 256, 128, 128)
 
-[node name="Tile9" type="Sprite2D" parent="main"]
+[node name="Tile9" type="Sprite2D" parent="Game/main"]
 position = Vector2(192, 192)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("3_k64os")
 region_enabled = true
 region_rect = Rect2(256, 256, 128, 128)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Game"]
 libraries = {
 "": SubResource("AnimationLibrary_mdwrg")
 }
 
-[node name="Sprite2D2" type="Sprite2D" parent="."]
+[node name="Sprite2D2" type="Sprite2D" parent="Game"]
 position = Vector2(143, 165)
 scale = Vector2(0.546875, 0.6875)
 texture = ExtResource("2_g6md6")
 
-[node name="ColorRect2" type="ColorRect" parent="."]
+[node name="ColorRect2" type="ColorRect" parent="Game"]
 offset_left = 48.0
 offset_top = 344.0
 offset_right = 232.0
 offset_bottom = 608.0
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="Game"]
 offset_left = 56.0
 offset_top = 352.0
 offset_right = 224.0
 offset_bottom = 600.0
 color = Color(0, 0, 0, 1)
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
+[node name="RichTextLabel" type="RichTextLabel" parent="Game"]
 texture_filter = 1
 offset_left = 64.0
 offset_top = 360.0
@@ -169,4 +173,4 @@ theme_override_fonts/normal_font = ExtResource("5_g1oka")
 theme_override_font_sizes/normal_font_size = 13
 text = "Help Axton repair the control panel by rearranging the navigation map to its correct order. Use your mouse to click on a tile to move it to a empty slot next to it "
 
-[connection signal="win" from="main" to="." method="_on_main_win"]
+[connection signal="win" from="Game/main" to="Game" method="_on_main_win"]
