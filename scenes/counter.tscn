@@ -6,11 +6,11 @@
 [node name="CanvasLayer" type="CanvasLayer"]
 
 [node name="Label" type="Label" parent="."]
-offset_left = 754.0
-offset_top = 17.0
-offset_right = 1135.0
-offset_bottom = 77.0
+offset_left = 681.0
+offset_top = 16.0
+offset_right = 1129.0
+offset_bottom = 76.0
 theme_override_fonts/font = ExtResource("1_34any")
-theme_override_font_sizes/font_size = 17
+theme_override_font_sizes/font_size = 20
 text = "Rocket pieces collected : 0/7"
 script = ExtResource("2_irg0p")
