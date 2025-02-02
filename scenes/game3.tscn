@@ -1,12 +1,13 @@
-[gd_scene load_steps=10 format=3 uid="uid://kwhi21hebcrv"]
+[gd_scene load_steps=11 format=3 uid="uid://kwhi21hebcrv"]
 
 [ext_resource type="PackedScene" uid="uid://c18iiq7g11hgt" path="res://scenes/rocket.tscn" id="1_mwvfg"]
-[ext_resource type="PackedScene" uid="uid://dh46fvp1e8hbk" path="res://scenes/asteroid.tscn" id="2_r1nmi"]
 [ext_resource type="PackedScene" uid="uid://ds4p4jp7jv3pc" path="res://scenes/node_2d.tscn" id="3_fkbnt"]
 [ext_resource type="Script" path="res://scripts/game/background.gd" id="4_i5m1f"]
 [ext_resource type="Texture2D" uid="uid://bkk57e66pjkpx" path="res://assets/visual/Space Background.png" id="4_psx1j"]
 [ext_resource type="AudioStream" uid="uid://d2ne7ka4c8gjc" path="res://assets/sounds/151022__bubaproducer__laser-shot-silenced.wav" id="6_4lw0g"]
 [ext_resource type="FontFile" uid="uid://0ggbptpehuck" path="res://assets/fonts/PixelOperator8.ttf" id="7_der02"]
+[ext_resource type="FontFile" uid="uid://dxipon7dcuy5f" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="7_ykkhu"]
+[ext_resource type="Script" path="res://scripts/game/temptext.gd" id="8_bonqb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kc7dn"]
 texture = ExtResource("4_psx1j")
@@ -163,9 +164,6 @@ sources/0 = SubResource("TileSetAtlasSource_kc7dn")
 [node name="rocket" parent="." instance=ExtResource("1_mwvfg")]
 position = Vector2(563, 576)
 
-[node name="asteroid" parent="." instance=ExtResource("2_r1nmi")]
-position = Vector2(408, 242)
-
 [node name="Node2D" parent="." instance=ExtResource("3_fkbnt")]
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
@@ -197,4 +195,22 @@ theme_override_fonts/font = ExtResource("7_der02")
 theme_override_font_sizes/font_size = 29
 text = "120s"
 
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 438.0
+offset_top = 440.0
+offset_right = 777.0
+offset_bottom = 524.0
+theme_override_constants/line_separation = 8
+theme_override_fonts/normal_font = ExtResource("7_der02")
+theme_override_fonts/bold_font = ExtResource("7_ykkhu")
+bbcode_enabled = true
+text = "Survive the asteroid belt!
+[b] Arrow keys [/b] to move and [b] spacebar [/b] to shoot"
+script = ExtResource("8_bonqb")
+
+[node name="Timer2" type="Timer" parent="RichTextLabel"]
+wait_time = 4.0
+one_shot = true
+
 [connection signal="timeout" from="Timer" to="rocket" method="_on_timer_timeout"]
+[connection signal="timeout" from="RichTextLabel/Timer2" to="RichTextLabel" method="_on_timer_2_timeout"]
