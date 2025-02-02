@@ -29,12 +29,12 @@ The cosmos, however, has one final trial. A maze of magnetic asteroids threatens
 
 1. Download the game files from [insert link].
 2. Extract the files to a desired location on your computer.
-3. Run the `AxtonsOdyssey.exe` file to start the game.
+3. Run the `AxtonsFable.exe` file to start the game.
 
 ## Credits
 
 - **Game Design and Development**: Juss Patel, Gaurav Upreti
-- **Story and Script**: Gaurav Upreti, alruatmawia Hmar
+- **Story and Script**: Gaurav Upreti, Lalruatmawia Hmar
 - **Art and Assets**: Lalruatmawia Hmar
 - **Sound and Music**: Lalruatmawia Hmar
 
