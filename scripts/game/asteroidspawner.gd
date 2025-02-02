@@ -2,14 +2,14 @@ extends Node2D
 
 @export var asteroid_scene: PackedScene
 @export var initial_spawn_interval: float = 1.0  
-@export var spawn_rate_increase: float = 0.03  
-@export var spawn_interval_min: float = 0.26  
+@export var spawn_rate_increase: float = 0.05  
+@export var spawn_interval_min: float = 0.20  
 
 var screen_width: float
 var current_spawn_interval: float
 
 func _ready():
-	print("Ready to start spawning!")  # Debug line
+	#print("Ready to start spawning!")  # Debug line
 	screen_width = get_viewport_rect().size.x
 	current_spawn_interval = initial_spawn_interval  
 	start_spawning()
