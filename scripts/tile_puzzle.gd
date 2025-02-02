@@ -20,7 +20,7 @@ func start_game():
 	# Duplicate the initial state for solved configuration
 	solved = tiles.duplicate(true)
 	# Shuffle the tiles to start the game
-	#shuffle_tiles()
+	shuffle_tiles()
 	
 # Function to shuffle the tiles using Fisher-Yates shuffle
 func shuffle_tiles():
