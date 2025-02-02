@@ -4,21 +4,21 @@
 [ext_resource type="Script" path="res://scripts/game/bullet.gd" id="1_k00ij"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vdpiq"]
-size = Vector2(20, 36)
+size = Vector2(10, 30)
 
 [node name="projectile" type="Area2D" groups=["bullet"]]
 script = ExtResource("1_k00ij")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(8, 13.75)
+position = Vector2(11, 19)
 scale = Vector2(5, 4.92857)
 texture = ExtResource("1_7qco6")
 region_enabled = true
-region_rect = Rect2(1.94531, 16.0141, 4.07599, 7.91545)
+region_rect = Rect2(3, 17, 2, 6)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(8, 15)
+position = Vector2(11, 19)
 shape = SubResource("RectangleShape2D_vdpiq")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]

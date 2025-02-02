@@ -1055,7 +1055,7 @@ theme_override_font_sizes/mono_font_size = 2
 theme_override_font_sizes/normal_font_size = 6
 theme_override_font_sizes/bold_font_size = 7
 bbcode_enabled = true
-text = "Using your [b]arrow keys[/b]  and the [b]spacebar[/b],
+text = "Using your [b]A/S or arrow keys[/b]  and the [b]W or spacebar[/b],
 help him navigate the treachorous terrain of this desolated planet and retrieve the broken parts of his rocket."
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="."]

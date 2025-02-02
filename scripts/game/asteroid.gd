@@ -31,4 +31,4 @@ func _on_timer_timeout() -> void:
 	var body = timer.get_meta("body")  # Retrieve the body from the timer's metadata
 	body.queue_free()  # Destroy the rocket
 	queue_free()  # Destroy the asteroid
-	get_tree().change_scene_to_file("res://scenes/main.tscn")
+	get_tree().change_scene_to_file("res://scenes/game3.tscn")

@@ -29,8 +29,8 @@ func _ready():
 func _physics_process(delta: float) -> void:
 	label.text = (str(time)).split(".")[0]+"s"
 	time = time-delta
-	var direction_x = Input.get_axis("ui_left", "ui_right")  
-	var direction_y = Input.get_axis("ui_up", "ui_down")  
+	var direction_x = Input.get_axis("left", "right")  
+	var direction_y = Input.get_axis("up", "down")  
 
 	velocity.x = direction_x * SPEED
 	velocity.y = direction_y * SPEED
@@ -40,7 +40,7 @@ func _physics_process(delta: float) -> void:
 	position.x = clamp(position.x, rocket_half_width, screen_width - rocket_half_width)
 	position.y = clamp(position.y, rocket_half_height, screen_height - rocket_half_height)
 
-	if Input.is_action_just_pressed("ui_select") and can_shoot:
+	if Input.is_action_just_pressed("shoot") and can_shoot:
 		shoot()
 
 func shoot():
@@ -59,4 +59,4 @@ func shoot():
 		
 
 func _on_timer_timeout() -> void:
-	print("game over")
+	get_tree().change_scene_to_file("res://scenes/scene4.tscn")
