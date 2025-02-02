@@ -197,7 +197,7 @@ text = "120s"
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 offset_left = 438.0
-offset_top = 440.0
+offset_top = 424.0
 offset_right = 777.0
 offset_bottom = 524.0
 theme_override_constants/line_separation = 8
@@ -205,7 +205,7 @@ theme_override_fonts/normal_font = ExtResource("7_der02")
 theme_override_fonts/bold_font = ExtResource("7_ykkhu")
 bbcode_enabled = true
 text = "Survive the asteroid belt!
-[b] Arrow keys [/b] to move and [b] spacebar [/b] to shoot"
+[b] Arrow keys/ WASD [/b] to move and [b] spacebar/left click [/b] to shoot"
 script = ExtResource("8_bonqb")
 
 [node name="Timer2" type="Timer" parent="RichTextLabel"]
