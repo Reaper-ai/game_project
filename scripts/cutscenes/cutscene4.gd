@@ -5,7 +5,7 @@ var txt = "[color=red]24,122 hrs since the crash[/color]\n\n Axton finally manag
 var credits = "[center][font_size=50]\nGaurav Upreti\n\nJuss Patel\n\nLalruatmawia Hmar\n\n[/font_size][/center]"
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	
+	AudioStreamPlayer2d.play_music(3)
 	# scene 1
 	$RichTextLabel.visible_ratio = 0
 	$RichTextLabel.text = "[center]" + txt  + "[/center]"

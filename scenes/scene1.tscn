@@ -1,7 +1,7 @@
 [gd_scene load_steps=14 format=3 uid="uid://cvlr501iv7to"]
 
 [ext_resource type="Script" path="res://scripts/cutscenes/cutscene1.gd" id="1_aw0v7"]
-[ext_resource type="Script" path="res://scripts/managers/scenemanager1.gd" id="1_q0neu"]
+[ext_resource type="Script" path="res://assets/cutscenes/manager1.gd" id="1_vo0sv"]
 [ext_resource type="Texture2D" uid="uid://dj4k6rju7jvsx" path="res://assets/cutscenes/black bg.png" id="2_fat6i"]
 [ext_resource type="FontFile" uid="uid://0ggbptpehuck" path="res://assets/fonts/PixelOperator8.ttf" id="3_243tl"]
 [ext_resource type="Texture2D" uid="uid://oa0s38j7ibe8" path="res://assets/cutscenes/op_scene1.png" id="4_fedai"]
@@ -132,15 +132,15 @@ _data = {
 "thecrash": SubResource("Animation_ob26d")
 }
 
-[node name="manager" type="Node"]
-script = ExtResource("1_q0neu")
+[node name="manager1" type="Node"]
+script = ExtResource("1_vo0sv")
 
 [node name="CUTSCENE1" type="Node" parent="."]
 script = ExtResource("1_aw0v7")
 
 [node name="blackbg" type="Sprite2D" parent="CUTSCENE1"]
-position = Vector2(575.85, 326.1)
-scale = Vector2(0.989896, 1.00895)
+position = Vector2(576, 323.6)
+scale = Vector2(0.994819, 1.00123)
 texture = ExtResource("2_fat6i")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="CUTSCENE1"]

@@ -17,6 +17,8 @@ config/features=PackedStringArray("4.3", "Forward Plus")
 [autoload]
 
 Global="*res://scripts/game/global.gd"
+AudioStreamPlayer2d="*res://scenes/audio_stream_player_2d.tscn"
+Hurt="*res://scenes/hurt.tscn"
 
 [input]
 

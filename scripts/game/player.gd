@@ -13,6 +13,7 @@ func _physics_process(delta: float) -> void:
 
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
+		$"../jump".play()
 		velocity.y = JUMP_VELOCITY
 
 	# Get the input direction and handle the movement/deceleration.
@@ -30,6 +31,7 @@ func _physics_process(delta: float) -> void:
 			animated_sprite_2d.play('run')
 	else:
 		animated_sprite_2d.play('jump')
+		
 		
 	if direction:
 		velocity.x = direction * SPEED

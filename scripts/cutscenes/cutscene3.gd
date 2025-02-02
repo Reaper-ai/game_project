@@ -7,19 +7,22 @@ var objective = "[color=red]22,122 hrs since the crash[/color]\n\n While travell
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	# scene 1
+	#AudioStreamPlayer2d.play_music(1)
 	$Sprite2D.hide()
 	$RichTextLabel2.hide()
 	$RichTextLabel.visible_ratio = 0
 	$RichTextLabel.text = "[center]" + txt  + "[/center]"
 	await get_tree().create_timer(1).timeout
 	$AnimationPlayer.play("text")
-	await get_tree().create_timer(12).timeout
-	
+	await get_tree().create_timer(10).timeout
+	AudioStreamPlayer2d.stop_music()
+	await get_tree().create_timer(3).timeout
 	# scene 2
 	$RichTextLabel.visible_ratio = 0
 	#$RichTextLabel.add_theme_font_size_override("font_size", 1)
 	$RichTextLabel.visible_ratio = 1
-	await get_tree().create_timer(1).timeout
+	await get_tree().create_timer(3).timeout
+	AudioStreamPlayer2d.play_music(2)
 	$RichTextLabel.text = "[center]\n\n\n[color=red]BUT[/color][/center]"
 	$AnimationPlayer.play("but")
 	await get_tree().create_timer(5).timeout	

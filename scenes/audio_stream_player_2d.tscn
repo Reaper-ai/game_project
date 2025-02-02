@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dskrredl3foe5"]
+
+[ext_resource type="Script" path="res://scripts/game/audio_stream_player_2d.gd" id="1_igcsp"]
+
+[node name="AudioStreamDramatic" type="AudioStreamPlayer2D"]
+script = ExtResource("1_igcsp")

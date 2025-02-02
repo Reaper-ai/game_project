@@ -20,7 +20,7 @@ func start_game():
 	# Duplicate the initial state for solved configuration
 	solved = tiles.duplicate(true)
 	# Shuffle the tiles to start the game
-	#shuffle_tiles()
+	shuffle_tiles()
 	
 # Function to shuffle the tiles using Fisher-Yates shuffle
 func shuffle_tiles():
@@ -102,6 +102,7 @@ func check_neighbours(rows, cols):
 	var empty_col = empty_pos.y
 	
 	if abs(empty_row - rows) + abs(empty_col - cols) == 1:  # Check if tile is adjacent
+		$"../AudioStreamPlayer2D".play()
 		swap_tiles(rows, cols, empty_row, empty_col)
 
 # Find the position of the empty tile (tile 9)

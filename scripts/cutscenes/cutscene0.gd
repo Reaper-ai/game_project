@@ -5,15 +5,21 @@ var txt = "[color=red]Brokenness[/color] is not the [color=red]end[/color], but 
 var disclaimer = "[center][color=orange][b]Disclaimer :[/b] \n seizure warning! player discreation is advised.[/color][/center]"
 # Called when the node enters the scene tree for the first time.
 func play():
+	
+	$AnimationPlayer.play("logo")
+	await get_tree().create_timer(9).timeout
+	$Sprite2D.hide()
+	
 	$RichTextLabel.text = "[center]" + txt + "[/center]"
 	fade_in()
 	await get_tree().create_timer(2).timeout
-	
 	$Disclaimer.visible_ratio = 0
 	$Disclaimer.text = disclaimer
 	await get_tree().create_timer(1).timeout
 	$AnimationPlayer.play("text")
 	await get_tree().create_timer(5).timeout
+	
+	
 	emit_signal("cutscene0_over")
 
 func _ready():
