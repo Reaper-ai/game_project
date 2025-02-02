@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cqn583l7j0if7"]
+
+[ext_resource type="Script" path="res://scripts/teleport_2.gd" id="1_ducjf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i65sx"]
+size = Vector2(13, 18)
+
+[node name="teleport2" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_ducjf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(16.5, 19)
+shape = SubResource("RectangleShape2D_i65sx")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

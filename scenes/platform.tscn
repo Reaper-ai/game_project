@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://7xu2ajatohs3"]
+
+[ext_resource type="Texture2D" uid="uid://cilgp0akkwvn6" path="res://assets/Tileset Terrain (16x16).png" id="1_748se"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a8q3t"]
+size = Vector2(37.5, 12)
+
+[node name="platform" type="AnimatableBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(168.75, 106.75)
+scale = Vector2(1.16667, 0.735294)
+texture = ExtResource("1_748se")
+region_enabled = true
+region_rect = Rect2(15.1752, 112.161, 33.2064, 17.2524)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(169.25, 107)
+shape = SubResource("RectangleShape2D_a8q3t")
+one_way_collision = true

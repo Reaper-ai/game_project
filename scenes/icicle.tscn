@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://dhry8y2mkpt3q"]
+
+[ext_resource type="PackedScene" uid="uid://bspg7bvdh56lt" path="res://scenes/killzone.tscn" id="1_bs5qk"]
+[ext_resource type="Texture2D" uid="uid://bf0en57pxv38l" path="res://assets/icerocks_pixel.png" id="2_nlvuw"]
+[ext_resource type="Script" path="res://scripts/randomsprite.gd" id="3_nhi2h"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y85te"]
+size = Vector2(13, 13)
+
+[node name="icicle" type="Area2D"]
+
+[node name="Killzone" parent="." instance=ExtResource("1_bs5qk")]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
+position = Vector2(5.5, 5)
+shape = SubResource("RectangleShape2D_y85te")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(5, 4.5)
+scale = Vector2(1.125, 1.0625)
+texture = ExtResource("2_nlvuw")
+region_enabled = true
+region_rect = Rect2(48, 16, 16, 16)
+script = ExtResource("3_nhi2h")
