@@ -19,6 +19,10 @@ The cosmos, however, has one final trial. A maze of magnetic asteroids threatens
 3. **Survive the Asteroid Belt**: (Mini-Game 3: Survival)
    - After successfully leaving the planet, Axton gets stuck in an asteroid belt full of magnetic asteroids that are attracted to his ship. His next objective is to survive in the field till his shield comes back online. Will Axton be able to survive, or will his fate repeat?
 
+
+## Theme in corporation
+The Theme is incorporated through the story i.e. to repair Axton's broken rocket and return home and through gameplay by the puzzles. 
+
 ## Controls
 
 - **Movement**: Arrow keys or WASD
