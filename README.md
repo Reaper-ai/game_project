@@ -27,6 +27,7 @@ The Theme is incorporated through the story i.e. to repair Axton's broken rocket
 
 - **Movement**: Arrow keys or WASD
 - **Jump**: Spacebar
+- **Shoot** : Spacebar ,left mouse click
 - **Solve Puzzle**: Mouse Click
 
 ## Installation
