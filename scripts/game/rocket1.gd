@@ -14,7 +14,7 @@ var rocket_half_width: float
 var rocket_half_height: float
 @onready var audio_stream_player_2d: AudioStreamPlayer2D = $"../AudioStreamPlayer2D"
 @onready var label: Label = $"../Label"
-var time = 120
+var time = 90
 func _ready():
 	var viewport_size = get_viewport_rect().size
 	screen_width = viewport_size.x
