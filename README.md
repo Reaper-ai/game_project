@@ -34,7 +34,7 @@ The cosmos, however, has one final trial. A maze of magnetic asteroids threatens
 ## Credits
 
 - **Game Design and Development**: Juss Patel, Gaurav Upreti
-- **Story and Script**: Gaurav Upreti, alruatmawia Hmar
+- **Story and Script**: Gaurav Upreti, Lalruatmawia Hmar
 - **Art and Assets**: Lalruatmawia Hmar
 - **Sound and Music**: Lalruatmawia Hmar
 
