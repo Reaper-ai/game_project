@@ -3,7 +3,7 @@ extends Node
 signal cutscene3_over
 
 var txt = "[color=red]22,108 hrs since the crash[/color]\n\n 'main system online' Axton heard a machine voice,his eyes lit up so did the ship's internal lightings. He can finally leave this planet and go back home. without any delay he performs the last check and turns on the engines.\n\n [color=green]T-200,199....3,2,1\n\n TAKE OFF[/color]"
-var objective = "[color=red]22,122 hrs since the crash[/color]\n\n While travelling through Axton suddenly encountered a swarm of astroids heading towards it, however his sheilds are still on repair, help Axton survive till the sheilds come back online."
+var objective = "[color=red]22,122 hrs since the crash[/color]\n\n While travelling through Axton suddenly encountered a swarm of astroids heading towards it, however his shields are still on repair, help Axton survive till the sheilds come back online."
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	# scene 1

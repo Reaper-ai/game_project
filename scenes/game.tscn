@@ -21,7 +21,7 @@
 [ext_resource type="AudioStream" uid="uid://dadtgrw7dukbb" path="res://assets/sounds/jump.wav" id="21_bb1ce"]
 [ext_resource type="AudioStream" uid="uid://d0bo6xj0bpeje" path="res://assets/sounds/coin.wav" id="22_d6nwd"]
 [ext_resource type="PackedScene" uid="uid://emr5j61l4jty" path="res://scenes/finish.tscn" id="22_gorhq"]
-[ext_resource type="PackedScene" uid="uid://61ukkj4mh4dm" path="res://check.tscn" id="23_75e8k"]
+[ext_resource type="PackedScene" uid="uid://61ukkj4mh4dm" path="res://scenes/check.tscn" id="23_75e8k"]
 [ext_resource type="PackedScene" uid="uid://beb7u07vx12uv" path="res://scenes/counter.tscn" id="23_etvrm"]
 [ext_resource type="Script" path="res://scripts/game/check1.gd" id="24_5o0i7"]
 [ext_resource type="Script" path="res://scripts/game/check2.gd" id="25_mq0c7"]
