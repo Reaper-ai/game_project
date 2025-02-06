@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://kwhi21hebcrv"]
+[gd_scene load_steps=15 format=3 uid="uid://kwhi21hebcrv"]
 
 [ext_resource type="PackedScene" uid="uid://c18iiq7g11hgt" path="res://scenes/rocket.tscn" id="1_mwvfg"]
 [ext_resource type="PackedScene" uid="uid://ds4p4jp7jv3pc" path="res://scenes/node_2d.tscn" id="3_fkbnt"]
@@ -8,6 +8,7 @@
 [ext_resource type="FontFile" uid="uid://0ggbptpehuck" path="res://assets/fonts/PixelOperator8.ttf" id="7_der02"]
 [ext_resource type="FontFile" uid="uid://dxipon7dcuy5f" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="7_ykkhu"]
 [ext_resource type="Script" path="res://scripts/game/temptext.gd" id="8_bonqb"]
+[ext_resource type="Texture2D" uid="uid://bpfetdoqprry2" path="res://assets/visual/shield.png" id="9_golco"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kc7dn"]
 texture = ExtResource("4_psx1j")
@@ -159,15 +160,169 @@ texture = ExtResource("4_psx1j")
 [sub_resource type="TileSet" id="TileSet_kun6x"]
 sources/0 = SubResource("TileSetAtlasSource_kc7dn")
 
+[sub_resource type="Animation" id="Animation_l7dot"]
+resource_name = "zone"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("rocket/Sprite2D2:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1.96667, 3.03333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05), Vector2(0.24, 0.15)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.0333333, 0.966667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(563, 324), Vector2(563, 550)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Camera2D:zoom")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.966667, 1.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(3, 3)]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("rocket/Sprite2D2")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(1.93333),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"show"
+}]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("rocket:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(2.93333, 4.16667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("rocket:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(2.9, 4.16667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(563, 576), Vector2(563, 400)]
+}
+
+[sub_resource type="Animation" id="Animation_kp772"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("rocket/Sprite2D2:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(563, 324)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Camera2D:zoom")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("rocket:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("rocket:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(563, 576)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_eqp6v"]
+_data = {
+"RESET": SubResource("Animation_kp772"),
+"zone": SubResource("Animation_l7dot")
+}
+
 [node name="main" type="Node2D"]
 
 [node name="rocket" parent="." instance=ExtResource("1_mwvfg")]
 position = Vector2(563, 576)
 
+[node name="Sprite2D2" type="Sprite2D" parent="rocket"]
+position = Vector2(9, -48)
+scale = Vector2(1e-05, 1e-05)
+texture = ExtResource("9_golco")
+
 [node name="Node2D" parent="." instance=ExtResource("3_fkbnt")]
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+scroll_ignore_camera_zoom = true
 script = ExtResource("4_i5m1f")
+scroll_speed = 90.0
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_mirroring = Vector2(1152, 648)
@@ -183,6 +338,7 @@ one_shot = true
 autostart = true
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(572, 576)
 stream = ExtResource("6_4lw0g")
 
 [node name="Label" type="Label" parent="."]
@@ -197,9 +353,9 @@ text = "90s"
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 offset_left = 438.0
-offset_top = 424.0
+offset_top = 398.0
 offset_right = 777.0
-offset_bottom = 524.0
+offset_bottom = 498.0
 theme_override_constants/line_separation = 8
 theme_override_fonts/normal_font = ExtResource("7_der02")
 theme_override_fonts/bold_font = ExtResource("7_ykkhu")
@@ -211,6 +367,14 @@ script = ExtResource("8_bonqb")
 [node name="Timer2" type="Timer" parent="RichTextLabel"]
 wait_time = 4.0
 one_shot = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(563, 324)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_eqp6v")
+}
 
 [connection signal="timeout" from="Timer" to="rocket" method="_on_timer_timeout"]
 [connection signal="timeout" from="RichTextLabel/Timer2" to="RichTextLabel" method="_on_timer_2_timeout"]

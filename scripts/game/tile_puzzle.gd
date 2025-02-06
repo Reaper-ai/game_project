@@ -74,9 +74,14 @@ func is_solvable(flat_tiles):
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	#if Input.is_action_just_released("cheat"):
+	#	emit_signal("win")
+	
 	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) and mouse:
 		var mouse_position = get_global_mouse_position()
-
+	
+	
+	
 		var pos = mouse_position - offset
 		
 		var rows = int((mouse_position.y - offset.y ) / 192)
@@ -127,3 +132,4 @@ func swap_tiles(row1, col1, row2, col2):
 func _input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton:
 		mouse = event
+		

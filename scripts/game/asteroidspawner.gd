@@ -36,7 +36,7 @@ func spawn_asteroid():
 
 		# Random initial rotation
 		asteroid.rotation = randf_range(0, TAU)  # TAU is 2 * PI (full circle)
-
+		add_to_group("astroids")
 		get_parent().add_child(asteroid)  
 
 func increase_spawn_rate():

@@ -7,6 +7,7 @@ const SPEED = 600.0  # Faster movement for better dodging
 @export var min_shoot_delay: float = 0.4  
 var shoot_delay: float  
 var can_shoot = true  
+var cam = load("res://scenes/camera_2d.tscn")
 
 var screen_width: float
 var screen_height: float
@@ -16,6 +17,8 @@ var rocket_half_height: float
 @onready var label: Label = $"../Label"
 var time = 90
 func _ready():
+
+	$Sprite2D2.hide()
 	var viewport_size = get_viewport_rect().size
 	screen_width = viewport_size.x
 	screen_height = viewport_size.y
@@ -42,7 +45,11 @@ func _physics_process(delta: float) -> void:
 
 	if Input.is_action_just_pressed("shoot") and can_shoot:
 		shoot()
-
+	
+	#if Input.is_action_just_pressed("cheat") and can_shoot:
+	#	$"../Timer".wait_time = 10
+	#	time = 10
+		
 func shoot():
 	if bullet_scene:
 		audio_stream_player_2d.play()
@@ -58,5 +65,12 @@ func shoot():
 		shoot_delay = max(shoot_delay - shoot_delay_decrease, min_shoot_delay)
 		
 
+func playScene():
+	get_tree().call_group("astroids","queue_free")
+	set_physics_process(false)
+	$"../AnimationPlayer".play("zone")
+
 func _on_timer_timeout() -> void:
+	playScene()
+	await get_tree().create_timer(10).timeout
 	get_tree().change_scene_to_file("res://scenes/scene4.tscn")

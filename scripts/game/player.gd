@@ -8,6 +8,11 @@ func _physics_process(delta: float) -> void:
 	var JUMP_VELOCITY = Global.VERTICAL
 	var SPEED = Global.SPEED
 	# Add the gravity.
+	
+	#if Input.is_action_just_released("cheat"):
+	#	Global.coins = 7
+	#	position = Vector2(1985,-375)	
+	
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 
