@@ -1,7 +1,7 @@
 [gd_scene load_steps=14 format=3 uid="uid://cvlr501iv7to"]
 
 [ext_resource type="Script" path="res://scripts/cutscenes/cutscene1.gd" id="1_aw0v7"]
-[ext_resource type="Script" path="res://assets/cutscenes/manager1.gd" id="1_vo0sv"]
+[ext_resource type="Script" path="res://scripts/manager1.gd" id="1_vo0sv"]
 [ext_resource type="Texture2D" uid="uid://dj4k6rju7jvsx" path="res://assets/cutscenes/black bg.png" id="2_fat6i"]
 [ext_resource type="FontFile" uid="uid://0ggbptpehuck" path="res://assets/fonts/PixelOperator8.ttf" id="3_243tl"]
 [ext_resource type="Texture2D" uid="uid://oa0s38j7ibe8" path="res://assets/cutscenes/op_scene1.png" id="4_fedai"]

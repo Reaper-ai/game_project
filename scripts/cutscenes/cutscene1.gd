@@ -39,7 +39,7 @@ func play():
 	$RichTextLabel2.text = "[center]" + objective + "[center]"
 	await get_tree().create_timer(1).timeout
 	$AnimationPlayer.play("text2")
-	await get_tree().create_timer(10).timeout
+	await get_tree().create_timer(18).timeout
 	
 	emit_signal("cutscene1_over")
 
