@@ -46,9 +46,8 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("shoot") and can_shoot:
 		shoot()
 	
-	#if Input.is_action_just_pressed("cheat") and can_shoot:
-	#	$"../Timer".wait_time = 10
-	#	time = 10
+	#if Input.is_action_just_pressed("cheat"):		
+	#	$"../Timer".emit_signal("timeout")
 		
 func shoot():
 	if bullet_scene:
@@ -72,5 +71,5 @@ func playScene():
 
 func _on_timer_timeout() -> void:
 	playScene()
-	await get_tree().create_timer(10).timeout
+	await get_tree().create_timer(8).timeout
 	get_tree().change_scene_to_file("res://scenes/scene4.tscn")

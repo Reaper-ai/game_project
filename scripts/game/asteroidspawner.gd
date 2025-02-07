@@ -2,8 +2,8 @@ extends Node2D
 
 @export var asteroid_scene: PackedScene
 @export var initial_spawn_interval: float = 1.0  
-@export var spawn_rate_increase: float = 0.05  
-@export var spawn_interval_min: float = 0.20  
+@export var spawn_rate_increase: float = 0.02  
+@export var spawn_interval_min: float = 0.25  
 
 var screen_width: float
 var current_spawn_interval: float
